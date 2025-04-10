@@ -3,20 +3,22 @@ body {
   background: #f3f4f6;
   padding: 20px;
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-  max-width: 700px;
+  width: 100%;
+  max-width: 500px; /* Membatasi lebar maksimal agar sesuai dengan HP */
   background: white;
-  padding: 30px;
-  margin: auto;
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #333;
 }
 
@@ -38,16 +40,15 @@ select {
 
 .item-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Mengubah agar elemen dalam row tampil vertikal di HP */
   margin-top: 10px;
-  gap: 10px;
 }
 
 .qty-control {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: 10px;
 }
 
 .qty-control button {
@@ -106,6 +107,8 @@ select {
   align-items: center;
   justify-content: center;
   margin-top: 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .pay-button:hover {
@@ -125,4 +128,20 @@ footer {
   margin-top: 30px;
   font-size: 14px;
   color: #777;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px; 
+  }
+  .qty-control button {
+    width: 28px;
+    height: 28px;
+  }
+  .qty-number {
+    width: 40px;
+  }
+  .pay-button {
+    padding: 12px 18px; 
+  }
 }
