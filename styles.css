@@ -1,7 +1,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #f3f4f6;
-  padding: 20px;
+  padding: 10px;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 500px; /* Membatasi lebar maksimal agar sesuai dengan HP */
+  max-width: 400px;
   background: white;
   padding: 20px;
   border-radius: 20px;
@@ -24,7 +24,7 @@ h2 {
 
 label {
   display: block;
-  margin-top: 20px;
+  margin-top: 15px;
   font-weight: 600;
   color: #444;
 }
@@ -35,12 +35,12 @@ select {
   border-radius: 10px;
   border: 1px solid #ccc;
   margin-top: 8px;
-  font-size: 16px;
+  font-size: 14px; 
 }
 
 .item-row {
   display: flex;
-  flex-direction: column; /* Mengubah agar elemen dalam row tampil vertikal di HP */
+  flex-direction: column; 
   margin-top: 10px;
 }
 
@@ -56,9 +56,9 @@ select {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  font-size: 16px; 
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -68,9 +68,9 @@ select {
 }
 
 .qty-number {
-  width: 45px;
+  width: 35px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 5px 0;
@@ -78,13 +78,13 @@ select {
 }
 
 .total {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: #333;
   height: 40px;
   display: flex;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .total span {
@@ -106,9 +106,8 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 10px;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .pay-button:hover {
@@ -125,23 +124,28 @@ select {
 
 footer {
   text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
+  margin-top: 20px;
+  font-size: 12px;
   color: #777;
 }
 
 @media (max-width: 600px) {
   .container {
     padding: 15px; 
+    max-width: 360px; 
   }
+
   .qty-control button {
     width: 28px;
     height: 28px;
   }
+
   .qty-number {
-    width: 40px;
+    width: 30px;
+    font-size: 12px;
   }
+
   .pay-button {
-    padding: 12px 18px; 
+    padding: 10px 15px; 
   }
 }
