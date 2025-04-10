@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Pembelian Kafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Rubik', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('coffee.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .container {
+      width: 92%;
+      max-width: 600px;
+      margin: 16px auto;
+      background: white;
+      padding: 18px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 28px;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 0.5px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 14px;
+      font-weight: 600;
+    }
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .category-title {
+      margin-top: 24px;
+      font-size: 19px;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding-bottom: 6px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      flex-wrap: nowrap;
+      gap: 8px;
+    }
+    .menu-item span {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 16px;
+      flex: 1;
+    }
+    .counter {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .counter button {
+      width: 36px;
+      height: 36px;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.1s ease, background-color 0.2s ease;
+    }
+    .counter button:active {
+      transform: scale(1.1);
+    }
+    .counter button:hover {
+      background-color: #45a049;
+    }
+    .counter input {
+      width: 36px;
+      height: 36px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+    .total {
+      text-align: flex;
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+    #totalHarga {
+      transition: color 0.3s ease, transform 0.3s ease;
+      color: #e53935;
+    }
+    #totalHarga.updated {
+      color: #4CAF50;
+      transform: scale(1.1);
+    }
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    @media (max-width: 480px) {
+      .menu-item {
+        flex-direction: row;
+        align-items: center;
+      }
+      .menu-item span {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>FORM PEMESANAN</h2>
+    <div style="text-align: center; font-family: 'Brush Script MT', cursive; font-size: 30px; color: #4CAF50; margin-top: -10px; margin-bottom: 20px;">
+  DAFTAR MENU
+</div>
+    <form id="orderForm">
+
+      <div class="category-title">Makanan</div>
+      <div class="menu-item"><span>MIE NYEMEK</span><div class="counter" data-price="10000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>BIHUN GORENG</span><div class="counter" data-price="10000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>MIE TEKTEK</span><div class="counter" data-price="10000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>MIE REBUS</span><div class="counter" data-price="10000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>PISANG COKELAT</span><div class="counter" data-price="10000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>KENTANG GORENG</span><div class="counter" data-price="10000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>SOSIS BAKAR</span><div class="counter" data-price="5000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>ANEKA GORENGAN</span><div class="counter" data-price="1000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+
+      <div class="category-title">Minuman</div>
+      <div class="menu-item"><span>ES TEH MANIS</span><div class="counter" data-price="3000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>POP ICE</span><div class="counter" data-price="5000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>ES JOSU</span><div class="counter" data-price="7000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>ES JELLY STRAWBERRY</span><div class="counter" data-price="7000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>ES COFFEE MALAKA</span><div class="counter" data-price="7000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>ES COFFEE SUSU</span><div class="counter" data-price="6000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>ES NUTRISARI</span><div class="counter" data-price="4000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>ANEKA COFFEE PANAS</span><div class="counter" data-price="5000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>WEDANG UWUH</span><div class="counter" data-price="10000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+      <div class="menu-item"><span>SUSU KAMBING</span><div class="counter" data-price="10000"><button type="button">-</button><input type="text" value="0" readonly><button type="button">+</button></div></div>
+
+      <div class="category-title">TOTAL PESANAN</div>
+      <div class="total">Total: <span id="totalHarga">Rp0</span></div>
+      <hr style="border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.08); margin-top: 10px; margin-bottom: 20px;" />
+
+      <label for="nama">Nama Pelanggan:</label>
+      <input type="text" id="nama" placeholder="Masukkan nama" required />
+
+      <label for="alamat">Alamat Pengiriman:</label>
+      <input type="text" id="alamat" placeholder="Masukkan alamat lengkap" required />
+
+      <label for="pembayaran">Metode Pembayaran:</label>
+      <select id="pembayaran" required>
+        <option value="" disabled selected>Pilih metode pembayaran</option>
+        <option value="CASH ON DELIVERY">CASH ON DELIVERY</option>
+        <option value="DANA">DANA</option>
+        <option value="GOPAY">GOPAY</option>
+        <option value="OVO">OVO</option>
+        <option value="QRIS">QRIS</option>
+        <option value="TRANSFER BANK">TRANSFER BANK</option>
+      </select>
+
+      <button type="submit">Pesan Sekarang</button>
+    </form>
+  </div>
+
+  <script>
+    function formatRupiah(angka) {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+      }).format(angka);
+    }
+
+    function updateTotal() {
+      let total = 0;
+      document.querySelectorAll(".counter").forEach(counter => {
+        const jumlah = parseInt(counter.querySelector("input").value);
+        const harga = parseInt(counter.dataset.price);
+        total += jumlah * harga;
+      });
+
+      const totalEl = document.getElementById("totalHarga");
+      totalEl.textContent = formatRupiah(total);
+      totalEl.classList.add("updated");
+      setTimeout(() => totalEl.classList.remove("updated"), 300);
+    }
+
+    document.querySelectorAll(".counter").forEach(counter => {
+      const input = counter.querySelector("input");
+      const btnMinus = counter.querySelectorAll("button")[0];
+      const btnPlus = counter.querySelectorAll("button")[1];
+
+      btnMinus.addEventListener("click", () => {
+        let value = parseInt(input.value);
+        if (value > 0) {
+          input.value = value - 1;
+          updateTotal();
+        }
+      });
+
+      btnPlus.addEventListener("click", () => {
+        let value = parseInt(input.value);
+        input.value = value + 1;
+        updateTotal();
+      });
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("nama").value.trim();
+      const alamat = document.getElementById("alamat").value.trim();
+      const pembayaran = document.getElementById("pembayaran").value;
+
+      if (!nama || !alamat || !pembayaran) {
+        alert("Silakan lengkapi semua data pelanggan.");
+        return;
+      }
+
+      let pesan = `Halo, saya ingin memesan:\n\nNama: *${nama}*\nAlamat: *${alamat}*\nMetode Pembayaran: *${pembayaran}*\n\n`;
+      let total = 0;
+      let adaPesanan = false;
+
+      document.querySelectorAll(".menu-item").forEach(item => {
+        const namaMenu = item.querySelector("span").textContent.trim();
+        const counter = item.querySelector(".counter");
+        const jumlah = parseInt(counter.querySelector("input").value);
+        const harga = parseInt(counter.dataset.price);
+
+        if (jumlah > 0) {
+          adaPesanan = true;
+          const subtotal = jumlah * harga;
+          total += subtotal;
+          pesan += `- ${namaMenu} x${jumlah} = Rp${subtotal.toLocaleString()}\n`;
+        }
+      });
+
+      if (!adaPesanan) {
+        alert("Silakan pilih minimal satu menu.");
+        return;
+      }
+
+      pesan += `\nTotal: *Rp${total.toLocaleString()}*`;
+
+      const noWa = "6281370504313";
+      const encodedPesan = encodeURIComponent(pesan);
+      const waLink = `https://wa.me/${noWa}?text=${encodedPesan}`;
+      window.open(waLink, "_blank");
+    });
+
+    updateTotal();
+  </script>
+</body>
+</html>
