@@ -9,7 +9,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 400px;
+  max-width: 480px; /* Lebar maksimal yang lebih besar agar lebih nyaman di HP */
   background: white;
   padding: 20px;
   border-radius: 20px;
@@ -35,12 +35,12 @@ select {
   border-radius: 10px;
   border: 1px solid #ccc;
   margin-top: 8px;
-  font-size: 14px; 
+  font-size: 16px; /* Ukuran font yang nyaman untuk HP */
 }
 
 .item-row {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column; /* Mengubah elemen menjadi vertikal untuk HP */
   margin-top: 10px;
 }
 
@@ -56,9 +56,9 @@ select {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 16px; 
+  width: 36px; /* Ukuran tombol yang nyaman di HP */
+  height: 36px;
+  font-size: 20px; /* Menambah ukuran font untuk tombol */
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -68,9 +68,9 @@ select {
 }
 
 .qty-number {
-  width: 35px;
+  width: 50px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 5px 0;
@@ -78,7 +78,7 @@ select {
 }
 
 .total {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #333;
   height: 40px;
@@ -93,20 +93,20 @@ select {
 }
 
 .pay-button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   background: linear-gradient(to right, #34d399, #059669);
   color: white;
-  font-size: 14px;
+  font-size: 16px; /* Ukuran font yang lebih besar agar mudah dibaca */
   font-weight: 600;
   text-decoration: none;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(5, 150, 105, 0.2);
   transition: all 0.2s ease;
-  height: 40px;
+  height: 50px; /* Ukuran tombol yang lebih besar dan mudah di-klik */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 15px;
   width: 100%;
 }
 
@@ -124,28 +124,29 @@ select {
 
 footer {
   text-align: center;
-  margin-top: 20px;
-  font-size: 12px;
+  margin-top: 30px;
+  font-size: 14px;
   color: #777;
 }
 
 @media (max-width: 600px) {
   .container {
-    padding: 15px; 
-    max-width: 360px; 
+    padding: 15px;
+    max-width: 450px; /* Menyesuaikan agar lebih pas di layar HP */
   }
 
   .qty-control button {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
   }
 
   .qty-number {
-    width: 30px;
-    font-size: 12px;
+    width: 50px;
+    font-size: 16px;
   }
 
   .pay-button {
-    padding: 10px 15px; 
+    padding: 12px 20px;
+    font-size: 16px;
   }
 }
